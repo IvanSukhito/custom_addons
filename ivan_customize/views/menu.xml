@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- BIkin Menu -->
+    <menuitem web_icon="ivan_customize,static/description/icon.png" id="menu_customize_ivan"
+        name="IC"
+    />
+    <menuitem id="menu_1"
+        name="menu_1"
+        parent="menu_customize_ivan"
+    />
+    <menuitem id="menu_1_2"
+        name="List_Menu_1"
+        action="action_list_menu1"
+        parent="menu_1"
+    />
+     <menuitem id="submenu_2"
+        name="menu_2"
+        parent="menu_customize_ivan"
+    />
+
+</odoo>
