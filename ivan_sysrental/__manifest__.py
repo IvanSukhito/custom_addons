@@ -1,13 +1,15 @@
 {
-    "name" : "Layani Module",
+    "name" : "System Rental",
     "author" : "Ivan S",
     "license" : "LGPL-3",
     "version" : "18.0.1.1",
     "depends" : ['mail'],
     "data" : [
-        "security/ir.model.access.csv",
-        "views/menu2_views.xml",
-        "views/menu.xml"
+        "security/ir.model.access.csv", 
+        "views/merek_kendaraan.xml",
+        "views/type_kendaraan.xml",
+        "views/kendaraan.xml",
+        "views/menu.xml",
     ],
     "installable" : True,
     "application" : True,

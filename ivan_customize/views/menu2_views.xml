@@ -55,8 +55,7 @@
                              <field name="name">ivan.customize.form</field>
                              <field name="model">ivan.customize</field>
                              <field name="arch" type="xml">
-                                 <form string="Rounding Form">
-                                    
+                                 <form string="Rounding Form">         
                                      <sheet>
                                          <div class="oe_title">
                                              <label for="nama"/>

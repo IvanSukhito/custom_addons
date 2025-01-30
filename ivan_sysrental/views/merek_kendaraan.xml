@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+        <data>
+                 <!-- Menu  dengan action -->
+                <record id="action_merek_kendaraan" model="ir.actions.act_window">
+                        <field name="name">merek kendaraan</field>
+                        <field name="res_model">sysrental.merek_kendaraan</field>
+                        <field name="view_mode">list,form</field>
+                        <field name="help" type="html">
+                                <p class="o_view_nocontent_smiling_face">Create a new Data List</p>
+                        </field>
+                </record>
+                <!-- views -->
+                <record id="merek_kendaraan_tree_view" model="ir.ui.view">
+                    <field name="name">sysrental.merek_kendaraan.list</field>
+                    <field name="model">sysrental.merek_kendaraan</field>
+                    <field name="arch" type="xml">
+                        <list string="merek kendaraan" editable="top"> <!-- Tambahkan editable="bottom" atau editable="top" -->
+
+                            <field name="merek_kendaraan" optional="show"/>
+                            <field name="type_kendaraan_id" optional="show"/>
+
+                        
+                        </list>
+                    </field>
+                </record>
+               
+
+        </data>
+</odoo>

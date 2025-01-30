@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- BIkin Menu -->
+    <menuitem web_icon="ivan_customize,static/description/icon.png" id="menu_customize_ivan"
+        name="RentalSys"
+    />
+    <menuitem id="kendaraan"
+        name="kendaraan"
+        parent="menu_customize_ivan"
+    />
+    <menuitem id="data_list_kendaraan"
+        name="list kendaraan"
+        action="action_list_kendaraan"
+        parent="kendaraan"
+    />
+    <menuitem id="data_type_kendaraan"
+        name="type kendaraan"
+        action="action_type_kendaraan"
+        parent="kendaraan"
+    />
+    <menuitem id="data_merek_kendaraan"
+        name="merek kendaraan"
+        action="action_merek_kendaraan"
+        parent="kendaraan"
+    />
+    <!-- <menuitem id="data_list_kategori"
+        name="kategori"
+        action="action_list_kategori"
+        parent="kendaraan"
+    />
+    <menuitem id="data_list_merek"
+        name="list merek"
+        action="action_list_merek"
+        parent="kendaraan"
+    /> -->
+
+     <!-- <menuitem id="submenu_2"
+        name="menu_2"
+        parent="menu_customize_ivan"
+    /> -->
+
+</odoo>
