@@ -17,22 +17,22 @@ class RentalMerekKendaraan(models.Model):
         store=True,
     )
 
-    @api.model
-    def create(self, vals):
-        """Jika merek kendaraan dibuat dari form kendaraan, otomatis assign type_kendaraan_id"""
-        print("Context:", self.env.context)  # Debugging
-    
-        kendaraan_id = self.env.context.get('active_id')
-        
-        if kendaraan_id and 'type_kendaraan_id' not in vals:
-            kendaraan = self.env['sysrental.kendaraan'].browse(kendaraan_id)
-            print("Kendaraan ID:", kendaraan.id)  # Debugging
-            print("Tipe Kendaraan ID:", kendaraan.type_kendaraan_id.id)  # Debugging
-            
-            if kendaraan.type_kendaraan_id:
-                vals['type_kendaraan_id'] = kendaraan.type_kendaraan_id.id
-                
-        return super(RentalMerekKendaraan, self).create(vals)
+    # @api.model
+    # def create(self, vals):
+        # """Jika merek kendaraan dibuat dari form kendaraan, otomatis assign type_kendaraan_id"""
+        # print("Context:", self.env.context)  # Debugging
+    # 
+        # kendaraan_id = self.env.context.get('active_id')
+        # 
+        # if kendaraan_id and 'type_kendaraan_id' not in vals:
+            # kendaraan = self.env['sysrental.kendaraan'].browse(kendaraan_id)
+            # print("Kendaraan ID:", kendaraan.id)  # Debugging
+            # print("Tipe Kendaraan ID:", kendaraan.type_kendaraan_id.id)  # Debugging
+            # 
+            # if kendaraan.type_kendaraan_id:
+                # vals['type_kendaraan_id'] = kendaraan.type_kendaraan_id.id
+                # 
+        # return super(RentalMerekKendaraan, self).create(vals)
 
 
     # def create(self, vals):

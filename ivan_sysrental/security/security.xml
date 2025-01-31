@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <data noupdate="0">
+
+        <record id="module_category_sysrental" model="ir.module.category">
+        <field name="name">SysRental</field>
+        <field name="sequence">1</field>
+        </record>
+
+        <record id="group_sysrental_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="ivan_sysrental.module_category_sysrental"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">User</field>
+        </record>
+
+        <record id="group_sysrental_administrator" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="ivan_sysrental.module_category_sysrental"/>
+        <field name="implied_ids" eval="[(4, ref('ivan_sysrental.group_sysrental_user'))]"/>
+        <field name="comment">Administrator</field>
+        </record>
+        </data>
+</odoo>

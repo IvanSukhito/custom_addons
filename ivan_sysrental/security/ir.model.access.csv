@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sysrental_kendaraan,access.sysrental.kendaraan,model_sysrental_kendaraan,base.group_user,1,1,1,1
-access_sysrental_type_kendaraan,access.sysrental.type_kendaraan,model_sysrental_type_kendaraan,base.group_user,1,1,1,1
-access_sysrental_merek_kendaraan,access.sysrental.merek_kendaraan,model_sysrental_merek_kendaraan,base.group_user,1,1,1,1
+access_sysrental_kendaraan,access.sysrental.kendaraan,model_sysrental_kendaraan,ivan_sysrental.group_sysrental_user,1,1,1,1
+access_sysrental_type_kendaraan_user,access.sysrental.type_kendaraan.user,model_sysrental_type_kendaraan,ivan_sysrental.group_sysrental_user,1,1,0,0
+access_sysrental_type_kendaraan_administrator,access.sysrental.type_kendaraan.administrator,model_sysrental_type_kendaraan,ivan_sysrental.group_sysrental_administrator,1,1,1,1
+access_sysrental_merek_kendaraan,access.sysrental.merek_kendaraan,model_sysrental_merek_kendaraan,ivan_sysrental.group_sysrental_user,1,1,1,1

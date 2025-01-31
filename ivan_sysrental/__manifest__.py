@@ -5,6 +5,7 @@
     "version" : "18.0.1.1",
     "depends" : ['mail'],
     "data" : [
+        "security/security.xml",
         "security/ir.model.access.csv", 
         "views/merek_kendaraan.xml",
         "views/type_kendaraan.xml",
