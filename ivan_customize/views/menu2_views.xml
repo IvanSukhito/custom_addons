@@ -73,65 +73,6 @@
                                  </form>
                              </field>
                          </record>
-                <!-- <kanban>
-                        <templates>
-
-                                <t t-name="kanban-box">
-                                    <div>
-                                        <field name="nama"/>
-                                    </div>
-                                </t>
-                        </templates>
-                        
-                </kanban> -->
-                <!-- Views -->
-                         <!-- <record id="rounding_form_view" model="ir.ui.view">
-                             <field name="name">account.cash.rounding.form</field>
-                             <field name="model">account.cash.rounding</field>
-                             <field name="arch" type="xml">
-                                 <form string="Rounding Form">
-                                     <sheet>
-                                         <div class="oe_title">
-                                             <label for="name"/>
-                                             <h1><field name="name" class="oe_inline"/></h1>
-                                         </div>
-                                         <group>
-                                             <group>
-                                                 <field name="rounding"/>
-                                                 <field name="strategy"/>
-                                                 <field name="profit_account_id" options="{'no_create': True}" invisible="strategy != 'add_invoice_line'" required="strategy == 'add_invoice_line'"
-                                                     groups="account.group_account_invoice,account.group_account_readonly" domain="[('account_type', 'not in', ('asset_receivable', 'liability_payable'))]"/>
-                                                 <field name="loss_account_id" options="{'no_create': True}" invisible="strategy != 'add_invoice_line'" required="strategy == 'add_invoice_line'"
-                                                     groups="account.group_account_invoice,account.group_account_readonly" domain="[('account_type', 'not in', ('asset_receivable', 'liability_payable'))]"/>
-                                                 <field name="rounding_method"/>
-                                             </group>
-                                         </group>
-                                     </sheet>
-                                 </form>
-                             </field>
-                         </record>
-
-                         <record id="rounding_search_view" model="ir.ui.view">
-                             <field name="name">account.cash.rounding.search</field>
-                             <field name="model">account.cash.rounding</field>
-                             <field name="arch" type="xml">
-                                 <search>
-                                     <field name="name"/>
-                                 </search>
-                             </field>
-                         </record>
-
-                         <record id="rounding_tree_view" model="ir.ui.view">
-                             <field name="name">account.cash.rounding.list</field>
-                             <field name="model">account.cash.rounding</field>
-                             <field name="arch" type="xml">
-                                 <list string="Rounding List">
-                                     <field name="name"/>
-                                     <field name="rounding"/>
-                                     <field name="rounding_method"/>
-                                 </list>
-                             </field>
-                         </record> -->
-
+                
         </data>
 </odoo>

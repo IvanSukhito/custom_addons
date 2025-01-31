@@ -16,7 +16,6 @@
                     <field name="model">sysrental.type_kendaraan</field>
                     <field name="arch" type="xml">
                         <list string="type kendaraan" editable="top"> <!-- Tambahkan editable="bottom" atau editable="top" -->
-
                             <field name="type_kendaraan" optional="show"/>
                         </list>
                     </field>
