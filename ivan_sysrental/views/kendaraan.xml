@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<odoo>
+        <data>
+                 <!-- Menu  dengan action -->
+                <record id="action_list_kendaraan" model="ir.actions.act_window">
+                        <field name="name">kendaraan</field>
+                        <field name="res_model">sysrental.kendaraan</field>
+                        <field name="view_mode">list,form,kanban</field>
+                        <field name="help" type="html">
+                                <p class="o_view_nocontent_smiling_face">Create a new Data List</p>
+                        </field>
+                </record>
+                <!-- views -->
+                <record id="list_kendaraan_tree_view" model="ir.ui.view">
+                    <field name="name">sysrental.kendaraan.list</field>
+                    <field name="model">sysrental.kendaraan</field>
+                    <field name="arch" type="xml">
+                        <list string="List Kendaraan"> <!-- Tambahkan editable="bottom" atau editable="top" -->
+
+                            <field name="nama" optional="show"/>
+                            <field name="plat_nomor" optional="show"/>
+                            <field name="tahun_keluaran" optional="show"/>
+                            <field name="type_kendaraan_id" optional="show"/>
+                            <field name="merek_kendaraan_id" optional="show"/>
+                            <field name="status" optional="show"/>
+                        </list>
+                    </field>
+                </record>
+                <!-- kanban -->
+                <record id="list_kendaraan_view_kanban" model="ir.ui.view">
+                    <field name="name">sysrental.kendaraan.view.kanban</field>
+                    <field name="model">sysrental.kendaraan</field>
+                    <field name="arch" type="xml">
+                        <kanban>
+                            <templates>
+                                 <t t-name="card">
+                                    <div class="d-flex align-items-baseline">
+                                        <field name="nama" class="fw-bolder fs-5 me-2"/>
+                                        <!-- <field name="amount_total" widget="monetary" class="fw-bolder ms-auto flex-shrink-0"/> -->
+                                    </div>
+                                    <footer class="align-items-end">
+                                        <div class="d-flex flex-wrap gap-1 text-nowrap">
+                                            <!-- <field name="nama"/> -->
+                                            <field name="plat_nomor"/>
+                                            <field name="type_kendaraan_id"/>
+                                        </div>
+                                        <field name="status" class="ms-auto"/>
+                                    </footer>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                </record>
+
+                <!-- form -->
+                 <record id="list_kendaraan_form_view" model="ir.ui.view">
+                             <field name="name">sysrental.kendaraan.form</field>
+                             <field name="model">sysrental.kendaraan</field>
+                             <field name="arch" type="xml">
+                                 <form string="Rounding Form">         
+                                     <sheet>
+                                         <div class="oe_title">
+                                             <label for="plat_nomor"/>
+                                             <h1><field name="plat_nomor" class="oe_inline"/></h1>
+                                         </div>
+                                         <group>
+                                             <group>
+                                                 <field name="nama"/>
+                                                 <field name="tahun_keluaran"/>
+                                                
+                                             </group>
+                                              <group>
+                                                 <field name="type_kendaraan_id"/>
+                                                 <field name="merek_kendaraan_id"/>
+                                                 <field name="status"/>
+                                                
+                                             </group>
+                                         </group>
+                                     </sheet>
+                                     <chatter/>
+                                 </form>
+                             </field>
+                         </record>
+                
+                <record id="list_kendaraan_search_view" model="ir.ui.view">
+                             <field name="name">sysrental.kendaraan.search</field>
+                             <field name="model">sysrental.kendaraan</field>
+                             <field name="arch" type="xml">
+                                 <search>
+                                     <filter name="tahun_keluaran" string="Tahun Keluaran" date="tahun_keluaran" start_year="-7" end_year="0" start_month="1" end_month="12" />
+                                     <!-- <filter name="1 tahun akhir" string="Tahun Keluaran" date="tahun_keluaran"/> -->
+                                     <!-- <filter name="1 tahun akhir" string="Tahun Keluaran" date="tahun_keluaran"/> -->
+                                     <!-- filter kendaraan 1 minggu terakhir -->
+                                     <!-- <filter name="7_days" string="7Days" domain="[('create_date','&qt;','datetime.datetime.combine(context_today() - relativedelta(days=7), datetime.time(23,59,59)).to_utc())]" /> -->
+                                    
+                                     <separator/>
+                                      <field name="nama" string="Kendaraan"
+                                        filter_domain="['|', '|', ('nama', 'ilike', self), ('plat_nomor', 'ilike', self)
+                                        , ('type_kendaraan_id', 'ilike', self)]"/>
+                                     <!-- <field name="status"/> -->
+                                     <!-- <field name="type_kendaraan_id"/> -->
+                                     <!-- <field name="merek_kendaraan_id"/> -->
+
+                                     <filter name="status_available_filter" domain="[('status','=','available')]" string="available"/>
+                                     <filter name="status_not_available_filter" domain="[('status','=','not available')]" string="not available"/>
+                                     
+                                     <!-- <filter name="" domain="" string=""/> -->
+                                     <separator/>
+                                     <filter name="type_kendaraan" domain="[('type_kendaraan_id.type_kendaraan','ilike','mobil')]" string="Mobil"/>
+
+                                     <group>
+                                        <filter name="type_kendaraan_group_by" 
+                                        context="{'group_by':'type_kendaraan_id'}" 
+                                        domain="[]" 
+                                        string="Type Kendaraan"/>
+                                        <filter name="status_group_by" 
+                                        context="{'group_by':'status'}" 
+                                        domain="[]" 
+                                        string="Status"/>
+                                        
+                                     </group>
+                                     <searchpanel>
+                                        <field name="status" string="Status"/>
+                                        <separator/>
+                                        <field icon="fa-truck" enable_counters="True" name="merek_kendaraan_id" string="Merek" select="multi" color="#495057"/>
+                                     </searchpanel>
+                                 </search>
+                             </field>
+                         </record>
+
+        </data>
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<odoo>
+        
+<!-- 
+        External ID?
+purchase.purchase_order_kpis_treepurchase.purchase_order_kpis_tree
+        Model Data?
+purchase.order.inherit.purchase.order.list
+View Name?
+purchase.order.inherit.purchase.order.list -->
+
+        <!-- <record id="view_purchase_order_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[@name='order_lines']" position="inside">
+                <group>
+                    <field name="num_total_product" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record> -->
+    
+    <record id="purchase_order_kpis_tree_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.inherit.purchase.order.list</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"></field>
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <list> 
+                                
+                            <header>
+                                <!-- Cara Update Masal, tambah button -->
+                                <!-- Kalau ada invisible, context.get('button') artinya kalau dia baru di klik tooglenya aja  dia muncul -->
+                                <button type="object" name="to_draft" string="Draft" invisible="context.get('update_state')"/>
+                                <!-- tanpa invisible, dia langsung muncul di sebelah new -->
+                                 <!-- <button type="object" name="to_draft" string="Button1" /> -->
+                                 <!-- name itu buat function, context itu berdasarkan field yg dideclare -->
+                                <!-- <button type="object" name="to_show_customize" string="Show Customize" invisible="context.get('is_to_show')"/> -->
+                            </header>
+        
+                        <!-- menghide isi kolom dengan status bukan di purchase, akan ke hide -->
+                                <!-- <field name="is_to_show" widget="boolean_toggle" options="{'terminology': 'Toggle'}"/> -->
+                                <!-- <field name="is_to_show" column_invisible="True"/> -->
+                                <!-- <field name="update_state" column_invisible="False"/> -->
+                               <field name="num_total_product" string="Total Product" invisible="not company_is_to_show"/> 
+                               <field name="num_total_product_qty" string="Total Qty" invisible="not company_is_to_show"/>
+                               <field name="num_total_invoices" string="Invoices" invisible="not company_is_to_show"/> 
+                               <field name="num_total_invoices_paid" string="Invoices Paid" invisible="not company_is_to_show"/>  
+                                <!-- <field name="num_total_product_qty" string="Total Qty" column_invisible="parent.company_id == False"/>  -->
+                               <!-- <field name="num_total_product_qty" string="Total Product Qty" invisible="is_to_show"/>
+                                <field name="num_total_invoices" string="Total Invoices" column_invisible="not company_id.is_to_show"/> 
+                                <field name="num_total_invoices_paid" string="Total Invoices Paid" invisible="is_to_show"/> -->
+
+                </list>
+              
+            </field>
+        </record>
+
+
+
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+
+<!-- Model Data?
+hr.employee.list
+External ID?
+hr.view_employee_tree 
+View Name?
+hr.employee.list
+View Type?
+List
+
+-->
+     <!-- <record id="view_employee_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.list.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="inside">
+                Menambahkan kolom baru (contoh: custom_field) 
+                <field name="column_static" string="Custom Field"/>
+            </xpath>
+        </field>
+    </record> -->
+
+     <record id="view_employee_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.list</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_email']" position="after">
+                <field name="column_static"/>
+                
+            </xpath>
+        <!-- <field name="description"  attrs="{'Invisible': False]}" /> -->
+        </field>
+    </record>
+
+</odoo>
