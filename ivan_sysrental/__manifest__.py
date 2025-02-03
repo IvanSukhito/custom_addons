@@ -3,8 +3,9 @@
     "author" : "Ivan S",
     "license" : "LGPL-3",
     "version" : "18.0.1.1",
-    "depends" : ['mail'],
+    "depends" : ['mail','sale'],
     "data" : [
+        "views/product_kendaraan_sysrental.xml",
         "security/security.xml",
         "security/ir.model.access.csv", 
         "views/merek_kendaraan.xml",

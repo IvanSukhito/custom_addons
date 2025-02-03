@@ -17,7 +17,6 @@
         name="type kendaraan"
         action="action_type_kendaraan"
         parent="kendaraan"
-        
     />
     <!-- groups="ivan_sysrental.group_sysrental_administrator" kasih itu kalau mau hide menunya -->
     <menuitem id="data_merek_kendaraan"
@@ -25,8 +24,9 @@
         action="action_merek_kendaraan"
         parent="kendaraan"
     />
-
-    
-  
-
+    <menuitem id="product_sysrental"
+        name="product_sysrental"
+        action="action_product_sysrental"
+        parent="menu_customize_ivan"
+    />
 </odoo>

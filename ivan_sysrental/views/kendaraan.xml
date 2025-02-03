@@ -22,7 +22,7 @@
                             <field name="tahun_keluaran" optional="show"/>
                             <field name="type_kendaraan_id" optional="show"/>
                             <field name="merek_kendaraan_id" optional="show"/>
-                            <field name="create_uid" optional="show"/>
+                            <field name="create_uid" optional="show" groups="ivan_sysrental.group_sysrental_administrator"/>
                             <field name="status" optional="show"/>
                         </list>
                     </field>
@@ -73,8 +73,7 @@
                                               <group>
                                                  <field name="type_kendaraan_id"/>
                                                  <field name="merek_kendaraan_id"/>
-                                                 <field name="status"/>
-                                                
+                                                 <field name="status"/>            
                                              </group>
                                          </group>
                                      </sheet>
@@ -98,14 +97,10 @@
                                       <field name="nama" string="Kendaraan"
                                         filter_domain="['|', '|', ('nama', 'ilike', self), ('plat_nomor', 'ilike', self)
                                         , ('type_kendaraan_id', 'ilike', self)]"/>
-                                     <!-- <field name="status"/> -->
-                                     <!-- <field name="type_kendaraan_id"/> -->
-                                     <!-- <field name="merek_kendaraan_id"/> -->
-
+                                 
                                      <filter name="status_available_filter" domain="[('status','=','available')]" string="available"/>
                                      <filter name="status_not_available_filter" domain="[('status','=','not available')]" string="not available"/>
                                      
-                                     <!-- <filter name="" domain="" string=""/> -->
                                      <separator/>
                                      <filter name="type_kendaraan" domain="[('type_kendaraan_id.type_kendaraan','ilike','mobil')]" string="Mobil"/>
 

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+        <data>
+                <record id="action_product_sysrental" model="ir.actions.act_window">
+                <field name="name">Products SysRental</field>
+                <field name="res_model">product.template</field>
+                <field name="view_mode">list,kanban,form</field>
+                <field name="domain">[('sale_ok', '=', False), ('purchase_ok', '=', False), ('is_rental', '=', True)]</field>
+                <field name="context">{ 
+                    'sale_ok': False, 
+                    'is_rental': True, 
+                    'purchase_ok': False,
+                    } 
+                </field> 
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                        Create a new rental product!
+                    </p>
+                </field>
+                </record>
+
+                <record id="product_sysrental_form_view_inherited" model="ir.ui.view">
+                    <field name="name">product.sysrental.form.view</field>
+                    <field name="model">product.template</field>
+                    <field name="inherit_id" ref="product.product_template_form_view"/>
+                    <field name="arch" type="xml">
+                        <xpath expr="//div[@name='options']" position="inside">
+                            <span class="d-inline-block">
+                                <field name="is_rental"  widget="boolean_toggle" options="{'terminology': 'Toggle'}"/>
+                                <label for="is_rental"/>
+                                
+                            </span>
+                        </xpath>
+                       
+                    </field>
+                </record>
+        </data>
+</odoo>
